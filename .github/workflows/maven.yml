@@ -18,8 +18,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./build
 
     steps:
     - uses: actions/checkout@v4
@@ -36,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: openas2 # Name of the artifact
-        path: build/
+        path: build/*.jar
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@v4
