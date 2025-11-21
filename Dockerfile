@@ -15,7 +15,7 @@ COPY start-container.sh /usr/src/openas2/Runtime/bin/
 RUN cd /usr/src/openas2/Runtime/bin && \
     chmod 755 *.sh && \
     cd /usr/src/openas2/Runtime && \
-    mv config config_template &
+    mv config config_template
 
 
 FROM eclipse-temurin:11.0.22_7-jre-jammy
@@ -28,4 +28,4 @@ COPY --from=builder /usr/src/openas2/Runtime/resources ${OPENAS2_BASE}/resources
 COPY --from=builder /usr/src/openas2/Runtime/config_template ${OPENAS2_HOME}/config_template
 RUN mkdir ${OPENAS2_BASE}/config
 WORKDIR $OPENAS2_HOME
-ENTRYPOINT ${OPENAS2_BASE}/bin/start-container.sh
+ENTRYPOINT ["${OPENAS2_BASE}/bin/start-container.sh, " &"]
