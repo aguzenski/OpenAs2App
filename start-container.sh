@@ -49,5 +49,5 @@ if [ ! -e $OPENAS2_PROPERTIES_FILE ]
     done
 
 fi
-# Start OpenAS2 in background
+# Start OpenAS2 in background.
 $(dirname $0)/start-openas2.sh &
