@@ -19,7 +19,7 @@
                ssl_keystore_password="testas2"
                console.command.processor.enabled="false"
                restapi.command.processor.enabled="false"
-               restapi.command.processor.baseuri="http://localhost:8080"
+               restapi.command.processor.baseuri="http://0.0.0.0:8080"
                restapi.command.processor.userid="userID"
                restapi.command.processor.password="pWd"
                processor.resend_max_retries="5"
